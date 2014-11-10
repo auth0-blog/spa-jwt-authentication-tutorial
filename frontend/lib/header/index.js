@@ -1,10 +1,9 @@
 /**
  * Module dependencies.
  */
-
-var ripple = require('ripplejs');
 var html = require('./header.html');
-var Header = ripple(html);
+var templater = require('../template');
+var Header = templater(html);
 
 /**
  * Initialize and render

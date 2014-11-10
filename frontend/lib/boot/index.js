@@ -9,7 +9,6 @@ var page = require('page');
  */
 
 require('../header');
-require('../footer');
 require('../home');
 
 /**

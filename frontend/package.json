@@ -26,9 +26,13 @@
   "homepage": "https://github.com/auth0/spa-jwt-authentication",
   "dependencies": {
     "bootstrap": "^3.3.0",
+    "browser-request": "^0.3.2",
     "jquery": "^2.1.1",
+    "jwt-decode": "^1.0.0",
     "page": "^1.3.7",
-    "ripplejs": "^0.5.3"
+    "ripplejs": "^0.5.3",
+    "ripplejs-events": "^0.1.2",
+    "ripplejs-refs": "^0.1.1"
   },
   "devDependencies": {
     "browserify": "^6.2.0",
