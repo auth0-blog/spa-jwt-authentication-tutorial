@@ -23,4 +23,4 @@ Signin.prototype.login = function(e) {
   })
 }
 
-module.exports = new Signin();
+module.exports = Signin;
