@@ -37,10 +37,11 @@
   "devDependencies": {
     "browserify": "^6.2.0",
     "gulp": "^3.6.2",
-    "gulp-serve": "^0.3.0",
+    "gulp-serve-spa": "^0.3.0",
     "mkdirp": "^0.5.0",
     "rework": "^1.0.1",
     "rework-npm": "^1.0.0",
+    "send": "^0.10.1",
     "stringify": "^3.0.0",
     "uglifyify": "^2.1.1",
     "vinyl-source-stream": "^1.0.0",

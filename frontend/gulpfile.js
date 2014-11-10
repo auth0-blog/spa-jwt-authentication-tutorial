@@ -12,7 +12,9 @@ var source = require('vinyl-source-stream');
 var stringify = require('stringify');
 var rework = require('rework');
 var npmRework = require('rework-npm');
-var serve = require('gulp-serve');
+var serve = require('gulp-serve-spa');
+var send = require('send');
+var path = require('path');
 
 /**
  * Create build directory
@@ -53,7 +55,10 @@ function browserifyTask(env) {
 
 gulp.task('browserify-dev', browserifyTask('dev'));
 
-gulp.task('serve', serve(__dirname));
+gulp.task('serve', serve({
+  root: __dirname,
+  spaFile: path.join(__dirname, 'index.html')
+}));
 
 /**
  * rework-css task

@@ -10,9 +10,13 @@ var page = require('page');
 
 require('../header');
 require('../home');
+require('../signin');
+require('../notfound');
 
 /**
  * Initialize router
  */
 
 page();
+
+
