@@ -40,18 +40,20 @@ In there, you'll see 2 buttons to do 2 API calls:
 
 Try clicking both to see what happens.
 
-### 3 - User Authentication Finished
+### 2 - User Authentication Finished
 
-In this branch, user Authentication works in the Frontend. You can see the [Login](https://github.com/auth0/ngeurope-demo/blob/3-user-signin-finished/frontend/login/login.js) and [Signup](https://github.com/auth0/ngeurope-demo/blob/3-user-signin-finished/frontend/signup/signup.js) implemented and working.
+In this branch, user Authentication works in the Frontend. You can see the [Login](https://github.com/auth0/spa-jwt-authentication-tutorial/blob/master/frontend/lib/signin/signin.js) and [Signup](https://github.com/auth0/spa-jwt-authentication-tutorial/blob/master/frontend/lib/signup/signup.js) implemented and working.
 
-Go to [http://localhost:3000/#/login](http://localhost:3000/#/login) to see the Login page and login. You'll see that if you click on the `Call secure API` button, it'll still throw an error. That's because we need to send the `JWT` on the `Authorization` header. Let's do that!
+Also, the API for user [signin](https://github.com/auth0/spa-jwt-authentication-tutorial/blob/master/backend/user-routes.js#L37-L54) and [signup](https://github.com/auth0/spa-jwt-authentication-tutorial/blob/master/backend/user-routes.js#L19-L35) are implemented in the server.
 
-### 4 - Sending JWTs on requests
+Go to [http://localhost:3000/signin](http://localhost:3000/signin) to see the Login page and login. You'll see that if you click on the `Call secure API` button, it'll still throw an error. That's because we need to send the `JWT` on the `Authorization` header. Let's do that!
 
-Now, we've implemented sending the JWT on the `Authorization` header on every request. Check it out [here](https://github.com/auth0/ngeurope-demo/blob/4-sending-jwt-on-requests/frontend/app.js#L10-L14)
+### 3 - Sending JWTs on requests
 
-Now, before logging in, try going to [http://localhost:3000/#/](http://localhost:3000/#/). You should still see this page even though you're not logged in. Try clicking on the `Call secure API` button and check that you still get the Unauthorized error. Now, go to the [Login page](http://localhost:3000/#/login) and log in. Try clicking again on `Call secure API`. Check that it's not returning a correct response since the `Authorization` header is sent in every request.
+Now, we've implemented sending the JWT on the `Authorization` header on every request. Check it out [here](https://github.com/auth0/spa-jwt-authentication-tutorial/blob/master/frontend/lib/secure-routes/index.js#L14-L21)
 
-### 5 - Restrict access to routes
+Now, before logging in, try going to [http://localhost:3000/](http://localhost:3000/). You should still see this page even though you're not logged in. Try clicking on the `Call secure API` button and check that you still get the Unauthorized error. Now, go to the [Login page](http://localhost:3000/) and log in. Try clicking again on `Call secure API`. Check that it's not returning a correct response since the `Authorization` header is sent in every request.
 
-In this section, we've restricted access to routes that require authentintication for anonymous users. Go to [http://localhost:3000/#/](http://localhost:3000/#/) without being logged in and you'll see that you're redirected to the Login page. You can see the implementation for that [here](https://github.com/auth0/ngeurope-demo/blob/5-restrict-access-to-routes/frontend/app.js#L18-L25).
+### 4 - Restrict access to routes
+
+In this section, we've restricted access to routes that require authentintication for anonymous users. Go to [http://localhost:3000/](http://localhost:3000/) without being logged in and you'll see that you're redirected to the Login page. You can see the implementation for that [here](https://github.com/auth0/spa-jwt-authentication-tutorial/blob/master/frontend/lib/secure-routes/index.js#L23-L34).
