@@ -9,6 +9,7 @@ var page = require('page');
  */
 
 require('../header');
+require('../secured-routes');
 require('../home');
 require('../signin');
 require('../signup');
