@@ -22,4 +22,5 @@ Signin.prototype.login = function(ev) {
     alert(err.responseText);
   });
 }
-module.exports = new Signin();
+
+module.exports = Signin;

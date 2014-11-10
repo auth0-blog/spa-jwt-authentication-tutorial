@@ -7,11 +7,11 @@ var page = require('page');
 var jwtDecode = require('jwt-decode');
 
 
-var SigninView = require('./signin');
+var SigninView = require('./signin')
 
 page('/signin', function(ctx, next) {
   var section = $('#content');
 
   section.empty()
-  SigninView.appendTo(section[0]);
+  new SigninView().appendTo(section[0]);
 });

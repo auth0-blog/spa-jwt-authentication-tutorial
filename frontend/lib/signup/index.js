@@ -12,6 +12,7 @@ var SignupView = require('./signup');
 page('/signup', function(ctx, next) {
   var section = $('#content');
 
-  section.empty()
-  SignupView.appendTo(section[0]);
+  section.empty();
+
+  new SignupView().appendTo(section[0]);
 });

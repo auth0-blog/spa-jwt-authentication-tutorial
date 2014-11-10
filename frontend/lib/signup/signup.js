@@ -23,4 +23,5 @@ Signup.prototype.signup = function(ev) {
     alert(err.responseText);
   });
 }
-module.exports = new Signup();
+
+module.exports = Signup;
