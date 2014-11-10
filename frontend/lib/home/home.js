@@ -29,7 +29,9 @@ Homepage.prototype.callSecuredApi = function() {
 
 
 var jwt = localStorage.getItem('jwt');
+var decodedJwt = jwt && jwtDecode(jwt);
 
 module.exports = new Homepage({
-  jwt: jwt
+  jwt: jwt,
+  decodedJwt: decodedJwt
 });
