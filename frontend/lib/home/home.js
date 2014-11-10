@@ -28,8 +28,4 @@ Homepage.prototype.callSecuredApi = function() {
 }
 
 
-var jwt = localStorage.getItem('jwt');
-
-module.exports = new Homepage({
-  jwt: jwt
-});
+module.exports = Homepage;
