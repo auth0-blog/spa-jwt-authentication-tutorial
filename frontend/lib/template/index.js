@@ -1,5 +1,5 @@
 var ripple = require('ripplejs');
-var refs = require('ripplejs-refs');
+var refs = require('../directives/refs');
 var events = require('ripplejs-events');
 var azshow = require('../directives/azshow');
 var json = require('../filters/json');
@@ -9,14 +9,11 @@ module.exports = function(html) {
   var View = ripple(html);
 
   View
+    .use(events)
     .use(refs)
-    .use(events);
+    .use(json)
+    .use(azshow);
 
-  // Directives
-  azshow(View);
-
-  // Filters
-  json(View);
 
   return View;
 }

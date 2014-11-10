@@ -1,19 +1,20 @@
-var $ = require('jquery')
 var page = require('page');
+var $ = require('jquery');
 
-var html = require('./signin.html');
+var html = require('./signup.html');
 var templater = require('../template');
-var Signin = templater(html);
+var Signup = templater(html);
 
-Signin.prototype.login = function(ev) {
+Signup.prototype.signup = function(ev) {
   ev.preventDefault();
-  request({
-    url: 'http://localhost:3001/sessions/create',
+  $.ajax({
+    url: 'http://localhost:3001/users',
     type: 'POST',
     dataType: 'json',
     data: {
       username: this.refs.username.value,
-      password: this.refs.password.value
+      password: this.refs.password.value,
+      extra: this.refs.extra.value
     }
   }).then(function(resp) {
     localStorage.setItem('jwt', resp.id_token);
@@ -22,4 +23,4 @@ Signin.prototype.login = function(ev) {
     alert(err.responseText);
   });
 }
-module.exports = new Signin();
+module.exports = new Signup();

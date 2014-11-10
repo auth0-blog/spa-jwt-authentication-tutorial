@@ -1,4 +1,4 @@
-var request = require('browser-request')
+var $ = require('jquery')
 var jwtDecode = require('jwt-decode');
 
 var html = require('./home.html');
@@ -9,11 +9,13 @@ Homepage.prototype.callApi = function(type, url) {
   var _this = this;
   this.set('response', null);
   this.set('api', type);
-  request({
+  $.ajax({
     url: url,
-    method: 'GET'
-  }, function(err, response, body) {
-    _this.set('response', body);
+    type: 'GET'
+  }).then(function(response) {
+    _this.set('response', response);
+  }, function(response) {
+    _this.set('response', response.responseText);
   });
 }
 

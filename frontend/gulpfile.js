@@ -64,6 +64,11 @@ gulp.task('serve', serve({
  * rework-css task
  */
 
+gulp.task('watch-css', function() {
+  gulp.watch(['lib/**/*.css', 'index.css'], ['reworkcss']);
+});
+
+
 gulp.task('reworkcss', function() {
   var file = path.resolve('index.css');
   var source = path.relative(__dirname, file);
@@ -84,4 +89,4 @@ gulp.task('reworkcss', function() {
  */
 
 gulp.task('default', ['watch']);
-gulp.task('watch', ['browserify-dev', 'reworkcss', 'serve']);
+gulp.task('watch', ['browserify-dev', 'watch-css', 'serve']);

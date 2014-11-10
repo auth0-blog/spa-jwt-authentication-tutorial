@@ -1,5 +1,6 @@
 @import 'bootstrap';
 @import './lib/signin/signin.css';
+@import './lib/signup/signup.css';
 
 /* Yours styles here */
 #content {
