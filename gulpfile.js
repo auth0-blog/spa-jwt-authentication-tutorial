@@ -89,4 +89,4 @@ gulp.task('reworkcss', function() {
  */
 
 gulp.task('default', ['watch']);
-gulp.task('watch', ['browserify-dev', 'watch-css', 'serve']);
+gulp.task('watch', ['browserify-dev', 'reworkcss', 'watch-css', 'serve']);
