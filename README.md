@@ -19,9 +19,9 @@ Then go to [http://localhost:3000](http://localhost:3000) and see the Frontend a
 
 ### Backend
 
-The backend is made with `node`, so you must have `node` and `npm` installed.
+Clone [the server](https://github.com/auth0/nodejs-jwt-authentication-sample) for this example.
 
-Then, just run `node server.js` to start the server on the port `3001`.
+Run the server app in the port `3001` following the needed instructions.
 
 ## Branches
 
